@@ -1,0 +1,54 @@
+﻿@page
+@model SOA_CA2.Pages.InvoicePage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_invoice[0].plant_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_invoice[0].date_time_purchased)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_invoice[0].customer_delivery_address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_invoice[0].quantity)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Customer_invoice) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.plant_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.date_time_purchased)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.customer_delivery_address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.quantity)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.customer_id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.customer_id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.customer_id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

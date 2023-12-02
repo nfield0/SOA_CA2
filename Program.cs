@@ -26,7 +26,7 @@ builder.Services.AddDbContext<Customer_invoiceDB>(options =>
 
 var app = builder.Build();
 
-app.MapGet("/plants", async (PlantDB db) =>
+/*app.MapGet("/plants", async (PlantDB db) =>
     await db.Plant.ToListAsync());
 
 app.MapGet("/customers", async (CustomerDB db) =>
@@ -35,7 +35,11 @@ app.MapGet("/customers", async (CustomerDB db) =>
 app.MapGet("/customer_invoices", async (Customer_invoiceDB db) =>
     await db.Customer_invoice.ToListAsync());
 
+app.MapPost("/plants", async (PlantDB db, Plant plant) =>
+    await db.Plant.AddAsync(plant)
+    );
 
+*/
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
