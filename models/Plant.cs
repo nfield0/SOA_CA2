@@ -8,7 +8,7 @@ namespace SOA_CA2.models
         [Key] public int plant_id { get; set; }
         public string? plant_name { get; set; }
         public string? plant_type { get; set; }
-        public float? plant_price { get; set; }
+        public double? plant_price { get; set; }
 
     }
 }

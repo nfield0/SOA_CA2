@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "secrets1": {
+      "type": "secrets"
+    },
+    "mssql1": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:SOA_CA2_hosted_db",
+      "dynamicId": null
+    }
+  }
+}

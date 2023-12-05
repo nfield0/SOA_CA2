@@ -4,13 +4,19 @@ using SOA_CA2.models;
 using MySqlConnector;
 using Pomelo.EntityFrameworkCore.MySql;
 
-string connectionString = "server=localhost;user=user;password=Password123!;database=plant_database";
+//string connectionString = "server=localhost;user=username;password=Password123!;database=plant_database";
+string connectionString = "server=localhost;user=username;password=Password123!;database=plant_database";
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-builder.Services.AddDbContext<PlantDB>(options =>
+builder.Services.AddControllers();
+
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+/*builder.Services.AddDbContext<PlantDB>(options =>
 {
      options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
@@ -21,10 +27,27 @@ builder.Services.AddDbContext<CustomerDB>(options =>
 builder.Services.AddDbContext<Customer_invoiceDB>(options =>
 {
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
-});
+});*/
+
+var connection = String.Empty;
+if (builder.Environment.IsDevelopment())
+{
+    builder.Configuration.AddEnvironmentVariables().AddJsonFile("appsettings.Development.json");
+    connection = builder.Configuration.GetConnectionString("AZURE_SQL_CONNECTIONSTRING");
+}
+else
+{
+    connection = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING");
+}
+
+builder.Services.AddDbContext<PlantDB>(options =>
+    options.UseSqlServer(connection));
 
 
 var app = builder.Build();
+
+
+
 
 /*app.MapGet("/plants", async (PlantDB db) =>
     await db.Plant.ToListAsync());
@@ -41,12 +64,23 @@ app.MapPost("/plants", async (PlantDB db, Plant plant) =>
 
 */
 
+
+
+
+
+
+
+
+
+
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();

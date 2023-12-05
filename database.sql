@@ -1,8 +1,8 @@
 
-DROP TABLE IF EXISTS customer_invoice, plant, customer;
 DROP DATABASE IF EXISTS plant_database;
 CREATE DATABASE plant_database;
 USE plant_database;
+DROP TABLE IF EXISTS customer_invoice, plant, customer;
 
 -- --------------------------------------------------------
 
