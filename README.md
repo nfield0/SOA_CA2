@@ -3,11 +3,15 @@ A Garden Centre API using MySQL, entirely hosted on Azure
 
 ### [View The Website Here](https://soaca220231127181925.azurewebsites.net/)
 
+
+# Home Page
 ![image](https://github.com/nfield0/SOA_CA2/assets/92158821/1ad1b7ea-f55a-4249-924c-3ff6ca61cf09)
 
-
+# Plant Page
 ![image](https://github.com/nfield0/SOA_CA2/assets/92158821/178ce94f-4df9-476b-a9f6-64d49bcfa440)
 
+# Responsive
+<img src="https://github.com/nfield0/SOA_CA2/assets/92158821/20f41ba4-b25a-446c-bc92-3353265de14b" width=500px/>
 
 
 # References
