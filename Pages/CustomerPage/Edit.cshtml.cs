@@ -13,9 +13,9 @@ namespace SOA_CA2.Pages.CustomerPage
 {
     public class EditModel : PageModel
     {
-        private readonly SOA_CA2.contexts.CustomerDB _context;
+        private readonly SOA_CA2.models.CustomerDB _context;
 
-        public EditModel(SOA_CA2.contexts.CustomerDB context)
+        public EditModel(SOA_CA2.models.CustomerDB context)
         {
             _context = context;
         }

@@ -43,6 +43,11 @@ else
 builder.Services.AddDbContext<PlantDB>(options =>
     options.UseSqlServer(connection));
 
+builder.Services.AddDbContext<CustomerDB>(options =>
+    options.UseSqlServer(connection));
+
+builder.Services.AddDbContext<Customer_invoiceDB>(options =>
+    options.UseSqlServer(connection));
 
 var app = builder.Build();
 

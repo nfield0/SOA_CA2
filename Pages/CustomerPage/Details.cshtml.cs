@@ -12,9 +12,9 @@ namespace SOA_CA2.Pages.CustomerPage
 {
     public class DetailsModel : PageModel
     {
-        private readonly SOA_CA2.contexts.CustomerDB _context;
+        private readonly SOA_CA2.models.CustomerDB _context;
 
-        public DetailsModel(SOA_CA2.contexts.CustomerDB context)
+        public DetailsModel(SOA_CA2.models.CustomerDB context)
         {
             _context = context;
         }

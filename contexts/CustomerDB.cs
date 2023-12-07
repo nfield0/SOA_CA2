@@ -1,8 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
-using SOA_CA2.models;
-
-namespace SOA_CA2.contexts
+﻿namespace SOA_CA2.models
 {
+    using Microsoft.EntityFrameworkCore;
     public class CustomerDB : DbContext
     {
         public CustomerDB(DbContextOptions<CustomerDB> options)

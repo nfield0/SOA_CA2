@@ -5,16 +5,15 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using SOA_CA2.contexts;
 using SOA_CA2.models;
 
 namespace SOA_CA2.Pages.CustomerPage
 {
     public class CreateModel : PageModel
     {
-        private readonly SOA_CA2.contexts.CustomerDB _context;
+        private readonly SOA_CA2.models.CustomerDB _context;
 
-        public CreateModel(SOA_CA2.contexts.CustomerDB context)
+        public CreateModel(SOA_CA2.models.CustomerDB context)
         {
             _context = context;
         }
