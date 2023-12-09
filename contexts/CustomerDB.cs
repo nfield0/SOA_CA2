@@ -7,5 +7,13 @@
         : base(options) { }
 
         public DbSet<Customer> Customer => Set<Customer>();
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+
+                _ = optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING"));
+            }
+        }
     }
 }

@@ -9,5 +9,14 @@ namespace SOA_CA2.contexts
         : base(options) { }
 
         public DbSet<Customer_invoice> Customer_invoice =>  Set<Customer_invoice>();
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+
+                _ = optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING"));
+            }
+        }
     }
 }
