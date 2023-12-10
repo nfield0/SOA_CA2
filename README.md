@@ -14,6 +14,13 @@ A Garden Centre API using MySQL, entirely hosted on Azure
 <img src="https://github.com/nfield0/SOA_CA2/assets/92158821/20f41ba4-b25a-446c-bc92-3353265de14b" width=500px/>
 
 
+# Postman Testing
+
+![image](https://github.com/nfield0/SOA_CA2/assets/92158821/e9aa5809-40a9-4917-b92a-88ab944649be)
+
+
+
+
 # References
 [MySQLConnector vs MySQL.Data](https://mysqlconnector.net/tutorials/migrating-from-connector-net/)
 
