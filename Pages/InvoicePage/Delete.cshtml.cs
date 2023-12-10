@@ -29,7 +29,7 @@ namespace SOA_CA2.Pages.InvoicePage
                 return NotFound();
             }
 
-            var customer_invoice = await _context.Customer_invoice.FirstOrDefaultAsync(m => m.customer_id == id);
+            var customer_invoice = await _context.Customer_invoice.FirstOrDefaultAsync(m => m.customer_invoice_id == id);
 
             if (customer_invoice == null)
             {

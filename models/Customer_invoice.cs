@@ -8,6 +8,7 @@ namespace SOA_CA2.models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
+        public int customer_invoice_id { get; set; }
         public int customer_id { get; set; }
         public int plant_id { get; set; }
         public DateTime date_time_purchased {get; set; }

@@ -30,7 +30,7 @@ namespace SOA_CA2.Pages.InvoicePage
                 return NotFound();
             }
 
-            var customer_invoice =  await _context.Customer_invoice.FirstOrDefaultAsync(m => m.customer_id == id);
+            var customer_invoice =  await _context.Customer_invoice.FirstOrDefaultAsync(m => m.customer_invoice_id == id);
             if (customer_invoice == null)
             {
                 return NotFound();
@@ -56,7 +56,7 @@ namespace SOA_CA2.Pages.InvoicePage
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!Customer_invoiceExists(Customer_invoice.customer_id))
+                if (!Customer_invoiceExists(Customer_invoice.customer_invoice_id))
                 {
                     return NotFound();
                 }
@@ -71,7 +71,7 @@ namespace SOA_CA2.Pages.InvoicePage
 
         private bool Customer_invoiceExists(int id)
         {
-          return (_context.Customer_invoice?.Any(e => e.customer_id == id)).GetValueOrDefault();
+          return (_context.Customer_invoice?.Any(e => e.customer_invoice_id == id)).GetValueOrDefault();
         }
     }
 }
